@@ -46,5 +46,15 @@ def set_weather(city: str, temp: float) -> None:
     known_weather_data[city] = temp
     return 'OK'
 
+@mcp.tool
+def get_known_weather_data() -> dict:
+    """
+    Retrieves the known weather data.
+
+    Returns:
+        dict: A dictionary containing city names as keys and their associated temperatures as values.
+    """
+    return known_weather_data
+
 if __name__ == "__main__":
     mcp.run()
